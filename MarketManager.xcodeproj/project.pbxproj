@@ -14,6 +14,7 @@
 		075965D719B6C97500CDFA05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075965D619B6C97500CDFA05 /* Images.xcassets */; };
 		075965E319B6C97500CDFA05 /* MarketManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075965E219B6C97500CDFA05 /* MarketManagerTests.swift */; };
 		075965ED19B6CCC800CDFA05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075965EC19B6CCC800CDFA05 /* MapViewController.swift */; };
+		075965EF19B6D40700CDFA05 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075965EE19B6D40700CDFA05 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		075965E119B6C97500CDFA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075965E219B6C97500CDFA05 /* MarketManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketManagerTests.swift; sourceTree = "<group>"; };
 		075965EC19B6CCC800CDFA05 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		075965EE19B6D40700CDFA05 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075965EF19B6D40700CDFA05 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		075965BE19B6C97500CDFA05 = {
 			isa = PBXGroup;
 			children = (
+				075965EE19B6D40700CDFA05 /* MapKit.framework */,
 				075965C919B6C97500CDFA05 /* MarketManager */,
 				075965DF19B6C97500CDFA05 /* MarketManagerTests */,
 				075965C819B6C97500CDFA05 /* Products */,
@@ -164,6 +168,14 @@
 				TargetAttributes = {
 					075965C619B6C97500CDFA05 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					075965DB19B6C97500CDFA05 = {
 						CreatedOnToolsVersion = 6.0;

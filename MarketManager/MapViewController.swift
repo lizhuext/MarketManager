@@ -22,12 +22,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         aLocationManager.desiredAccuracy = kCLLocationAccuracyBest
         aLocationManager.distanceFilter = 10
         aLocationManager.headingFilter = 5
+        aLocationManager.requestAlwaysAuthorization()
         return aLocationManager
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationManager.requestAlwaysAuthorization()
+        
+        self.locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -58,6 +60,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println(error.description)
+    }
+    
     func polylineWithLocations(locations: [CLLocation]) -> MKPolyline {
         var coordinates: [CLLocationCoordinate2D] = []
         for location in self.locations {
@@ -76,6 +82,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         self.polyline = self.polylineWithLocations(self.locations)
         self.mapView!.addOverlay(self.polyline!)
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        let renderer: MKPolylineRenderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
+        renderer.lineWidth = 5.0
+        return renderer
     }
     
 }
