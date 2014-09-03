@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cTL-ky-7xS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -25,7 +26,13 @@
                             <outlet property="delegate" destination="X2O-Ik-Zs4" id="Biu-gf-Wa7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="iYo-tG-cpS"/>
+                    <navigationItem key="navigationItem" title="Main" id="iYo-tG-cpS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Ja-cH-ytT">
+                            <connections>
+                                <segue destination="HrS-gO-Bdf" kind="show" id="JJd-Oi-x68"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRv-Cl-kbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +93,7 @@
         <!--Map-->
         <scene sceneID="lbX-WM-2t2">
             <objects>
-                <viewController title="Map" id="HrS-gO-Bdf" sceneMemberID="viewController">
+                <viewController title="Map" id="HrS-gO-Bdf" customClass="MapViewController" customModule="MarketManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7k-Iv-yAu"/>
                         <viewControllerLayoutGuide type="bottom" id="exW-A1-S58"/>
@@ -94,8 +101,25 @@
                     <view key="view" contentMode="scaleToFill" id="Ly3-Ar-aPj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vx9-Us-6KR">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="exW-A1-S58" firstAttribute="top" secondItem="Vx9-Us-6KR" secondAttribute="bottom" id="5Nv-13-mXp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vx9-Us-6KR" secondAttribute="trailing" id="YJO-pu-oiI"/>
+                            <constraint firstItem="Vx9-Us-6KR" firstAttribute="top" secondItem="Ly3-Ar-aPj" secondAttribute="topMargin" id="ptU-NW-xfW"/>
+                            <constraint firstItem="Vx9-Us-6KR" firstAttribute="leading" secondItem="Ly3-Ar-aPj" secondAttribute="leadingMargin" id="vHY-Zp-23k"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Map" id="Jur-pL-7nG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ouQ-g6-qHW"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Vx9-Us-6KR" id="84u-WM-yFn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQf-MY-fCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

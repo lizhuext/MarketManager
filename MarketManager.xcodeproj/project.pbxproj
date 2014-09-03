@@ -13,6 +13,7 @@
 		075965D519B6C97500CDFA05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075965D319B6C97500CDFA05 /* Main.storyboard */; };
 		075965D719B6C97500CDFA05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075965D619B6C97500CDFA05 /* Images.xcassets */; };
 		075965E319B6C97500CDFA05 /* MarketManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075965E219B6C97500CDFA05 /* MarketManagerTests.swift */; };
+		075965ED19B6CCC800CDFA05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075965EC19B6CCC800CDFA05 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		075965DC19B6C97500CDFA05 /* MarketManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075965E119B6C97500CDFA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075965E219B6C97500CDFA05 /* MarketManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketManagerTests.swift; sourceTree = "<group>"; };
+		075965EC19B6CCC800CDFA05 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				075965CC19B6C97500CDFA05 /* AppDelegate.swift */,
 				075965D119B6C97500CDFA05 /* ViewController.swift */,
+				075965EC19B6CCC800CDFA05 /* MapViewController.swift */,
 				075965D319B6C97500CDFA05 /* Main.storyboard */,
 				075965D619B6C97500CDFA05 /* Images.xcassets */,
 				075965CE19B6C97500CDFA05 /* MarketManager.xcdatamodeld */,
@@ -214,6 +217,7 @@
 				075965D219B6C97500CDFA05 /* ViewController.swift in Sources */,
 				075965CD19B6C97500CDFA05 /* AppDelegate.swift in Sources */,
 				075965D019B6C97500CDFA05 /* MarketManager.xcdatamodeld in Sources */,
+				075965ED19B6CCC800CDFA05 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

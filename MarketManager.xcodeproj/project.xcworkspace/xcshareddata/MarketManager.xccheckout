@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>134B43B3-955E-4EFC-80D9-A01C14158BA7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MarketManager</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC96A1627D8AC5B301080AB2E1AC259C8CF4F863</key>
+		<string>https://github.com/wesleysui/MarketManager.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MarketManager.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC96A1627D8AC5B301080AB2E1AC259C8CF4F863</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wesleysui/MarketManager.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC96A1627D8AC5B301080AB2E1AC259C8CF4F863</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC96A1627D8AC5B301080AB2E1AC259C8CF4F863</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MarketManager</string>
+		</dict>
+	</array>
+</dict>
+</plist>
