@@ -9,12 +9,14 @@
 import UIKit
 import MapKit
 import CoreLocation
+import QuartzCore
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var locations: [CLLocation] = []
     var polyline: MKPolyline?
+    var date: NSDate!
     
     lazy var locationManager: CLLocationManager = {
         let aLocationManager = CLLocationManager()
@@ -28,9 +30,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
+        self.locationManager.startUpdatingLocation()
+        self.date = NSDate()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,16 +67,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         println(error.description)
     }
     
-    func polylineWithLocations(locations: [CLLocation]) -> MKPolyline {
-        var coordinates: [CLLocationCoordinate2D] = []
-        for location in self.locations {
-            coordinates += [location.coordinate]
-        }
-        
-        let polyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
-        return polyline
-    }
-    
     // MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
         println( __FUNCTION__)
@@ -90,5 +83,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         renderer.lineWidth = 5.0
         return renderer
     }
+    
+    // MARK: private
+    private func polylineWithLocations(locations: [CLLocation]) -> MKPolyline {
+        var coordinates: [CLLocationCoordinate2D] = []
+        for location in self.locations {
+            coordinates += [location.coordinate]
+        }
+        
+        let polyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
+        return polyline
+    }
+
+    private func captureScreen() -> UIImage? {
+        if let window = AppDelegate().window {
+            let screenSize = window.bounds.size
+            UIGraphicsBeginImageContext(screenSize)
+            let context = UIGraphicsGetCurrentContext()
+            self.view.layer.renderInContext(context)
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+            return image
+        }
+        
+        return nil
+    }
+    
     
 }
