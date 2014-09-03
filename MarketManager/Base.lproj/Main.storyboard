@@ -19,6 +19,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0iN-0E-mYz" id="OGE-wq-Jld">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5wl-9f-MhC" kind="show" id="2VJ-zf-MtZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -115,7 +118,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="Jur-pL-7nG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ouQ-g6-qHW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ouQ-g6-qHW">
+                            <connections>
+                                <segue destination="Dem-gQ-1lB" kind="presentation" id="dEM-Qb-jIA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Vx9-Us-6KR" id="84u-WM-yFn"/>
